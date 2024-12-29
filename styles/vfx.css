@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Salsa&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&display=swap');
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.vfx__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #28282a;
+    min-height: 100vh;
+}
+
+.vfx__list {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    filter: blur(30px);
+}
+
+.vfx__item {
+    position: absolute;
+    opacity: 0.75;
+    border-radius: 40% 50% 30% 40%;
+    transform: rotate(-180deg);
+}
+
+.vfx__item--1 {
+    background: linear-gradient(90deg, #faccff, #5a78a9);
+    width: 400px;
+    aspect-ratio: 1/1;
+    left: 20%;
+    top: 20%;
+    animation: transform 10s ease-in-out infinite both alternate,
+    movement_one 16s ease-in-out infinite both;
+}
+
+.vfx__item--2 {
+    background: linear-gradient(90deg, #faccff, #5a78a9);
+    width: 300px;
+    aspect-ratio: 4/3;
+    left: 20%;
+    top: 25%;
+    animation: transform 8s ease-in-out infinite both alternate,
+    movement_two 16s ease-in-out infinite both;
+}
+
+@keyframes transform {
+    0%, 100% {
+        border-radius: 33% 67% 70% 30% / 30% 40% 70% 70%;
+    }
+
+    20% {
+        border-radius: 37% 62% 53% 43% / 37% 25% 35% 63%;
+    }
+
+    40% {
+        border-radius: 36% 64% 64% 36% / 64% 48% 52% 26%;
+    }
+
+    60% {
+        border-radius: 37% 63% 51% 49% / 30% 30% 70% 73%;
+    }
+
+    80% {
+        border-radius: 40% 60% 42% 50% / 51% 51% 70% 73%;
+    }
+}
+
+@keyframes movement__one {
+    0%, 100% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(50%, 0%) rotateY(10deg) scale(1);
+    }
+}
+
+@keyframes movement__two {
+    0%, 100% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(-50%, 80%) rotateY(-200deg) scale(1.3);
+    }
+}
+
+/* swiper */
+.vfx__swiper {
+    width: 100%;
+    padding: 60px 0 20px;
+}
+
+.vfx__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    aspect-ratio: 4/6;
+    border-radius: 150px;
+    text-align: center;
+    user-select: none;
+}
+
+.vfx__img {
+    width: 100%;
+    max-width: 280px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 150px;
+    padding: 14px;
+    background-color: rgba(250, 204, 255, 0.1);
+}
+
+.vfx__title {
+    font-family: "Dancing Script", serif;
+    font-size: 3rem;
+    width: max-content; 
+    color: rgb(212,211, 211);
+}
+
+.vfx__description {
+    color: rgba(252, 249, 249, 0.75);
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.3;
+    background: rgba(233, 239, 239, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(123, 119, 119, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 10px;
+    transform: translate(130px, -20px);
+    transition-delay: 0.4s;
+}
+
+.vfx__slide .vfx__title, .vfx__slide .vfx__description {
+    opacity: 0;
+    transition: all 1s linear;
+}
+
+.swiper-slide-active .vfx__title, .swiper-slide-active .vfx__description {
+    opacity: 1;
+}
+
+.swiper-slide-active .vfx__description {
+    transform: translate(130px, -70px);
+}
