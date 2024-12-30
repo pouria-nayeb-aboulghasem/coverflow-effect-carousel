@@ -106,12 +106,18 @@ ul {
 /* swiper */
 .vfx__swiper {
     width: 100%;
-    padding: 60px 0 20px;
+}
+
+.vfx__wrapper {
+    width: 100%;
+    height: 100vh;
 }
 
 .vfx__slide {
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 280px;
     aspect-ratio: 4/6;
@@ -121,9 +127,8 @@ ul {
 }
 
 .vfx__img {
-    width: 100%;
-    max-width: 280px;
-    height: 100%;
+    width: 280px;
+    height: auto;
     object-fit: cover;
     object-position: center;
     border-radius: 150px;
@@ -138,20 +143,27 @@ ul {
     color: rgb(212,211, 211);
 }
 
+.vfx__data {
+    position: absolute;
+    width: 200px;
+    bottom: 5rem;
+    right: -3rem;
+}
+
 .vfx__description {
-    color: rgba(252, 249, 249, 0.75);
+    transform: translateX(45px);
+    color: rgba(0, 6, 6, 0.75);
     font-size: 0.85rem;
     font-weight: 400;
     font-style: italic;
     line-height: 1.3;
-    background: rgba(233, 239, 239, 0.2);
+    background: rgba(233, 239, 239, 0.75);
     border-radius: 10px;
     border: 1px solid rgba(123, 119, 119, 0.5);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 10px;
-    transform: translate(130px, -20px);
     transition-delay: 0.4s;
 }
 
@@ -164,6 +176,71 @@ ul {
     opacity: 1;
 }
 
-.swiper-slide-active .vfx__description {
-    transform: translate(130px, -70px);
+@media screen and (min-width: 768px) {
+    .vfx__img {
+        width: 365px;
+    }
+
+    .vfx__data {
+        width: 256px;
+        bottom: 3rem;
+        right: -7rem;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    .vfx__img {
+        width: 450px;
+    }
+
+    .vfx__description {
+        font-size: 1.5rem;
+    }
+
+    .vfx__data {
+        width: 356px;
+        bottom: 2rem;
+        right: -13rem;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .vfx__img {
+        width: 512px;
+    }
+
+    .vfx__description {
+        font-size: 1.65rem;
+        font-weight: 500;
+    }
+
+    .vfx__data {
+        bottom: 3rem;
+        right: -11rem;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .vfx__img {
+        width: 850px;
+    }
+
+    .vfx__description {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+
+    .vfx__data {
+        width: 512px;
+        bottom: -19rem;
+        right: -27rem;
+    }
+}
+
+@media screen and (min-width: 2500px) {
+    .vfx__data {
+        width: 512px;
+        bottom: 34rem;
+        right: -27rem;
+    }
 }
