@@ -34,11 +34,13 @@ const swiper = new Swiper(".swiper-container", {
 const vfxSwiper = new Swiper(".vfx__swiper", {
     effect: "coverflow",
     speed: 900,
+    initialSlide: 1,
     loop: true,
-    grabCursor: true,
+    grabCursor: false,
     slidesPerView: 'auto',
     centeredSlides: 'auto',
     spaceBetween: 900,
+    allowTouchMove: false,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
