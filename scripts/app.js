@@ -35,7 +35,7 @@ const vfxSwiper = new Swiper(".vfx__swiper", {
     effect: "coverflow",
     speed: 2500,
     loop: true,
-    grabCursor: true,
+    grabCursor: false,
     slidesPerView: 'auto',
     centeredSlides: 'auto',
     spaceBetween: 900,
@@ -51,7 +51,7 @@ const vfxSwiper = new Swiper(".vfx__swiper", {
     coverflowEffect: {
         rotate: 0,
         stretch: 0,
-        depth: 300,
+        depth: 250,
         modifier: 1,
         slideShadows: false
     },
