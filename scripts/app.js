@@ -40,10 +40,14 @@ const vfxSwiper = new Swiper(".vfx__swiper", {
     centeredSlides: true,
     spaceBetween: 900,
     allowTouchMove: false,
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
     },
+    // autoplay: {
+    //     delay: 5000,
+    //     disableOnInteraction: false,
+    // },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
