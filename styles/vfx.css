@@ -21,7 +21,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #28282a;
+    background-color: #232328;
     min-height: 100vh;
 }
 
@@ -104,6 +104,10 @@ ul {
 }
 
 /* swiper */
+.vfx {
+    margin-top: 2rem;
+}
+
 .vfx__swiper {
     width: 100%;
 }
@@ -166,7 +170,11 @@ ul {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    padding: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition-delay: 0.4s;
 }
 
@@ -222,11 +230,11 @@ ul {
 
 @media screen and (min-width: 1350px) {
     .vfx__img {
-        width: 450px;
+        width: 400px;
     }
 
     .vfx__description {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .vfx__data {
@@ -258,8 +266,8 @@ ul {
     }
 
     .vfx__description {
-        font-size: 2.5rem;
-        font-weight: 500;
+        font-size: 2rem;
+        font-weight: 400;
     }
 
     .vfx__data {
@@ -284,12 +292,59 @@ ul {
 
 .swiper-button-prev,
 .swiper-button-next {
+top: initial;
+bottom: 5%;
   width: initial;
   height: initial;
   background-color: #fff;
-  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  border: 2px solid transparent;
   padding: .5rem;
   font-size: 1.5rem;
-  color: #000;
+  color: #28282a;
   transition: border .4s, background-color .4s;
+}
+
+.swiper-button-prev {
+    right: initial;
+    left: 4rem;
+}
+
+.swiper-button-next {
+    right: initial;
+    left: 8rem;
+}
+
+@media screen and (max-width: 768px) {
+    .swiper-button-prev, .swiper-button-next {
+        right: initial;
+        top:initial;
+        transform: translateX(-50%);
+        bottom: 15%;
+    }
+    
+    .swiper-button-prev {
+        left: 45%;
+    }
+    
+    .swiper-button-next {
+        left: calc(45% + 4rem);
+    }
+}
+
+/* footer */
+.footer__content {
+    text-align: center;
+    font-size: 0.75rem;
+    margin-block: 4rem 1rem;
+    color: var(--text-color);
+}
+
+.footer__link {
+    color: var(--white-color);
+    font-weight: var(--fw-bold);
+}
+
+.footer__link:hover {
+    color: var(--yellow-color);
 }

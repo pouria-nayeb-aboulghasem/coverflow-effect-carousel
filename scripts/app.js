@@ -33,7 +33,7 @@ const swiper = new Swiper(".swiper-container", {
 
 const vfxSwiper = new Swiper(".vfx__swiper", {
     effect: "coverflow",
-    speed: 2500,
+    speed: 1000,
     loop: true,
     grabCursor: false,
     slidesPerView: 'auto',
